@@ -10,11 +10,27 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Hello redux app</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="Todo-App">
+          <form>
+            <input type="text"/>
+          </form>
+          <div className="Todo-List">
+            <ul>
+              <li>
+                <input type="checkbox"/> Create Static UI
+              </li>
+              <li>
+                <input type="checkbox"/> Create Initial State
+              </li>
+              <li>
+                <input type="checkbox"/> Used state to Render UI
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
+    
   }
 }
 
