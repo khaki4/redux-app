@@ -10,7 +10,19 @@ export const createTodo = (name) => {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({name, isComplete: false})
+    body: JSON.stringify({name: name, isComplete: false})
+  })
+    .then(res => res.json())
+}
+
+export const updateTodo = (todo) => {
+  return fetch(`http://localhost:8080/${todo.id}`, {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({todo})
   })
     .then(res => res.json())
 }
