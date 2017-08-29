@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 
 const Message = ({ message }) => (
   message
@@ -6,4 +8,6 @@ const Message = ({ message }) => (
     : null
 )
 
-export default Message
+export default connect(
+  (state) => ({message: state.message})
+)(Message)
