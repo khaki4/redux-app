@@ -15,6 +15,7 @@ export const createTodo = (name) => {
     .then(res => res.json())
 }
 
+
 export const updateTodo = (todo) => {
   return fetch(`http://localhost:8080/${todo.id}`, {
     method: 'PUT',
@@ -25,4 +26,14 @@ export const updateTodo = (todo) => {
     body: JSON.stringify({todo})
   })
     .then(res => res.json())
+}
+
+export const destoryTodo = (id) => {
+  return fetch(`http://localhost:8080/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
 }
